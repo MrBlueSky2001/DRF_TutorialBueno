@@ -1,0 +1,8 @@
+En esta rama he incluido el .envs ya que en otras ramas no sé el porqué no pude subirlo.
+
+Para la comprobacion de la API se debe introducir el comando que dice en el tutorial:
+
+	docker run -p 80:8080 -e SWAGGER_JSON=/schema.yml -v ${PWD}/schema.yml:/schema.yml swaggerapi/swagger-ui
+
+y seguidamente nos vamos al navegador y ponemos como URL: http://127.0.0.1/
+
