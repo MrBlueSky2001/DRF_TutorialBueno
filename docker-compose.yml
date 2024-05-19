@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+# https://hub.docker.com/_/postgres
+# https://github.com/cookiecutter/cookiecutter-django
+# https://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: django-drf_production_postgres
+    container_name: django-drf_local_postgres
+    env_file:
+      - ./.envs/.local/.postgres
+    volumes:
+      - django_drf_tutorials:/var/lib/postgresql/data
+      #- django-tutorial-drf_backups:/backups
+    ports:
+      - 5432:5432
+
+volumes:
+  django_drf_tutorials:
+  #django-tutorial-drf_backups:
+
+
